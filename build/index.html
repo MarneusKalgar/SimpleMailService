@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mailApp">
+<head>
+	<title>SimpleMailService</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+	<!-- bower:css -->
+	<!-- endbower -->
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body class="page">
+	<div class="container">
+	
+		<header class="page-header">
+			<a href="#/" class="logo"><img src="img/logo.png" alt="" class="logo__img"></a>
+			<h1 class="page-header__text">SimpleMailService</h1>
+		</header>
+	
+		<section class="main">
+			<aside class="sidebar">
+				<a ui-sref="write" class="btn btn--write">write</a>
+			</aside>
+			<div class="flex-item" ui-view></div>
+		</section>
+
+		<footer class="page-footer">
+			<p class="page-footer__text">&copy; Prog.kiev.ua 2016</p>
+		</footer>
+		
+	</div><!-- end container -->
+
+	<!-- bower:js -->
+	<script src="libs/jquery/dist/jquery.js"></script>
+	<script src="libs/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="libs/angular/angular.js"></script>
+	<script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
+	<!-- endbower -->
+
+	<script src="js/app.js"></script>
+	<script src="js/services/inboxService.js"></script>
+	<script src="js/controllers/inboxCtrl.js"></script>
+	<script src="js/controllers/emailCtrl.js"></script>
+	<script src="js/controllers/writeCtrl.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+[
+  {
+    "from": "Prog.kiev.ua",
+    "date": 1469817961100,
+    "subject": "Software Engineering Conference 2016 расширяет масштабы",
+    "id": 1
+  },
+  {
+    "from": "JavaScript Weekly <jsw@peterc.org>",
+    "date": 1469817961100,
+    "subject": "JavaScript Weekly: Issue 294 — July 28, 2016",
+    "id": 2
+  },
+  {
+    "from": "Joel from Egghead <joel@egghead.io>",
+    "date": 1469817961100,
+    "subject": "Manage Complex State in React Apps with MobX",
+    "id": 3
+  },
+  {
+    "from": "ng-newsletter <us@fullstack.io>",
+    "date": 1469817961100,
+    "subject": "Angular 2: Why TypeScript?",
+    "id": 4
+  },
+  {
+    "from": "Medium Daily Digest <noreply@medium.com>",
+    "date": 1469817961100,
+    "subject": "What the hell is “Rapid Prototyping”?",
+    "id": 5
+  },
+  {
+    "from": "FrontEnd Focus <frontend@cooperpress.com>",
+    "date": 1469817961100,
+    "subject": "Must-know Techniques for Building HTML5 Apps for Any Screen Size",
+    "id": 6
+  }
+]

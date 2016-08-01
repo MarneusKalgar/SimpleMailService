@@ -1,0 +1,9 @@
+[
+  {
+    "from": "Joel from Egghead <joel@egghead.io>",
+    "date": 1469817961100,
+    "subject": "Manage Complex State in React Apps with MobX",
+    "content": "Hey there, Managing state is fundamentally the most important thing your app does. Even something as dead simple as 'hello world' printed to the console is an exercise in creating, storing, and displaying some piece of state to the user. The concepts of model, view, and controller (MVC) as a pattern were developed to combat the hydra that is application state. Object oriented programming and functional programming exist as tools to manage and understand state. It's not surprising that the most popular content on egghead is direct advice on how to sanely manage state in your UIs. As programmers we naturally want to tame the chaos, and we prefer to not reinvent the wheel every single time we build an application. No two applications are truly the same, and some require different solutions for how state is modeled and managed. It's important that we understand our options. From managing state by hand to bringing in a purpose built library to help out. When your application state starts to become complex, leveraging a solid library is a smart move. Maybe you are already using something like Redux in your application? Even if that is the case, you aren't going to want to sleep on today's release!",
+    "id": 3
+  }
+]

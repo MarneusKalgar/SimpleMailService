@@ -1,0 +1,13 @@
+<div class="email">
+	<ul class="email__info" ng-repeat="prop in email.currentMessage">
+		<li class="email__elem"><h3>{{prop.subject}}</h3></li>
+		<li class="email__elem"><b>from:</b> {{prop.from}}</li>
+		<li class="email__elem">{{prop.date | date: 'dd/MM/yyyy'}}</li>
+		<li class="email__elem"><a ui-sref="inbox" class="btn">Back</a></li>
+		<li class="email__elem">{{prop.content}}</li>
+		<li class="email__elem email__elem--reply">
+			<textarea ng-model="email.currentMessage.response" name="reply-area" class="email__reply-area" placeholder="Enter a reply"></textarea>
+			<a href="" ng-click="email.sendReply(email.currentMessage.response)" class="btn">Reply</a>
+		</li>
+	</ul>
+</div>
