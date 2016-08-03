@@ -15,6 +15,14 @@
 		<header class="page-header">
 			<a href="#/" class="logo"><img src="img/logo.png" alt="" class="logo__img"></a>
 			<h1 class="page-header__text">SimpleMailService</h1>
+		
+			<nav class="main-nav">
+				<ul class="main-nav__action-bar">
+					<li class="main-nav__item"><a ui-sref="inbox" class="btn btn--action">Inbox</a></li>
+					<li class="main-nav__item"><a ui-sref="outbox" class="btn btn--action">Outbox</a></li>
+					<li class="main-nav__item"><a ui-sref="trash" class="btn btn--action">Trash</a></li>
+				</ul>
+			</nav>
 		</header>
 	
 		<section class="main">
@@ -31,15 +39,32 @@
 	</div><!-- end container -->
 
 	<!-- bower:js -->
-	<script src="libs/jquery/dist/jquery.js"></script>
-	<script src="libs/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="libs/angular/angular.js"></script>
 	<script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
 	<!-- endbower -->
+	
+	<!-- Including Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+	<script>
+	  // Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyBUmj2X4osxEVpUxfp25ti6Ycu_mFIiQhM",
+			authDomain: "mailapp-886ae.firebaseapp.com",
+			databaseURL: "https://mailapp-886ae.firebaseio.com",
+			storageBucket: "mailapp-886ae.appspot.com",
+		};
+		firebase.initializeApp(config);
+	</script>
+	<!-- Including Firebase -->
 
 	<script src="js/app.js"></script>
 	<script src="js/services/inboxService.js"></script>
+	<script src="js/services/outboxService.js"></script>
+	<script src="js/services/trashService.js"></script>
 	<script src="js/controllers/inboxCtrl.js"></script>
+	<script src="js/controllers/outboxCtrl.js"></script>
+	<script src="js/controllers/trashCtrl.js"></script>
 	<script src="js/controllers/emailCtrl.js"></script>
 	<script src="js/controllers/writeCtrl.js"></script>
 </body>

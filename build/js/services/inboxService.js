@@ -1,6 +1,7 @@
-function inboxService($http) {
-	var inbox = {
+function inboxService($firebaseObject, $firebaseArray) {
 
+	var inbox = {
+		
 		messages: [],
 		message: {},
 
@@ -10,28 +11,54 @@ function inboxService($http) {
 		sendMessage: sendMessage
 	};
 
+		var rootRef = firebase.database().ref();
+		var inboxRef = rootRef.child('inbox');
+		var trashRef = rootRef.child('trash');
+		var writeRef = rootRef.child('outbox');
+
+		inbox.inboxData = $firebaseArray(inboxRef);
+		
+		inbox.writeData = $firebaseArray(writeRef);
+
+		inbox.trashData = $firebaseArray(trashRef);
+
 	function getMessages() {
-		return $http.get('json/emails.json')
-			.success(function (data) {
-				inbox.messages = data;
-			});
+		inbox.inboxData.$loaded()
+			.then(function(data) {
+				inbox.inboxData = data;
+				console.log(inbox.inboxData);
+			})
+			.catch(function(error) {
+				console.error("Error: ", error);
+			})
+		
+			inbox.messages = inbox.inboxData;
 	};
+	inbox.getMessages();
 
 	function getMessage(id) {
-		return $http.get('json/emails/' + id + '.json')
-			.success(function (data) {
-				inbox.message = data;
-			});
+			inbox.message = inbox.inboxData[id];
 	};
 
 	function deleteMessage(index) {
-		inbox.messages.splice(index, 1)
+		inbox.trashData.$add(inbox.inboxData[index]).
+		then(function() {
+			console.log('success');
+			inbox.inboxData.$remove(inbox.inboxData[index]);
+		})
 	};
 
 	function sendMessage(message) {
-		if (message) {
-			console.log(message + ' was sended!');
-		}
+		inbox.writeData.$add({
+			content: message.content,
+			date: firebase.database.ServerValue.TIMESTAMP,
+			subject: message.subj,
+			whom: message.whom
+		}).then(function() {
+			message.whom = '';
+			message.subj = '';
+			message.content = '';
+		});
 	};
 
 	return inbox;
@@ -40,4 +67,4 @@ function inboxService($http) {
 
 
 angular.module('mailApp')
-	.factory('inboxService', ['$http', inboxService]);
+	.factory('inboxService', ['$firebaseObject', '$firebaseArray', inboxService]);

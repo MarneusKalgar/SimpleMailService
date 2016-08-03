@@ -2,16 +2,11 @@
 	<h2 class="inbox__title">Inbox</h2>
 	<div class="inbox__count">
 		<p class="inbox__text">You have {{ inbox.messages.length }} messages.</p>
+
 		<div ng-hide="!inbox.messages.length" class="inbox__search">
 			<input ng-model="inbox.search" type="text" class="inbox__search-field" placeholder="Search by 'from'">
 		</div>
 	</div>
-	
-	<ul class="inbox__action-bar">
-		<li><button type="button" class="btn btn--action">Delete</button></li>
-		<li><button type="button" class="btn btn--action">Mark as read</button></li>
-		<li><button type="button" class="btn btn--action">Add to spam</button></li>
-	</ul>
 
 	<ul class="inbox__list">
 		<li ng-show="!inbox.messages.length" class="inbox__message">No messages!</li>
@@ -26,7 +21,7 @@
 				<li class="inbox__elem">{{message.date | date: 'dd/MM/yyyy'}}</li>
 			</ul>
 			<div class="inbox__actions">
-				<a ui-sref="email({id:message.id})" ng-click="messages.read=true" class="btn">Read</a>
+				<a ui-sref="email({id:message.id})" class="btn">Read</a>
 				<a ng-click="inbox.deleteMessage($index)" class="btn">Delete</a>
 			</div>
 		</li>

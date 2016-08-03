@@ -2,15 +2,15 @@
 	<h2 class="write__title">New message</h2>
 	<a ui-sref="inbox" class="btn">Back</a>
 
-	<form name="writeForm" ng-submit="write.sendMessage(write.message.post)" class="write__form" novalidate>
+	<form name="writeForm" ng-submit="write.sendMessage()" class="write__form" novalidate>
 	
 		<label class="write__label" for="writeEmail">Whom</label>
-		<input ng-model="write.message.email" ng-required="true" name="email" id="writeEmail" class="write__input" type="email">
+		<input ng-model="write.message.whom" ng-required="true" name="whom" id="writeEmail" class="write__input" type="email">
 
 		<label class="write__label" for="writeSubj">Subject</label>
 		<input ng-model="write.message.subj" ng-required="true" id="writeSubj" class="write__input" type="text">
 
-		<textarea ng-model="write.message.post" name="write-area" class="write__text-area" placeholder="Enter a message"></textarea>
+		<textarea ng-model="write.message.content" name="write-area" class="write__text-area" placeholder="Enter a message"></textarea>
 
 		<button type="submit" ng-disabled="writeForm.$invalid" class="btn btn--send">Send</button>
 	</form>

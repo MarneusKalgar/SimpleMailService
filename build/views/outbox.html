@@ -1,0 +1,29 @@
+<div class="outbox">
+	<h2 class="outbox__title">Outbox</h2>
+	<div class="outbox__count">
+		<p class="outbox__text">You have {{ outbox.messages.length }} messages.</p>
+
+		<div ng-hide="!outbox.messages.length" class="outbox__search">
+			<input ng-model="outbox.search" type="text" class="outbox__search-field" placeholder="Search by 'whom'">
+		</div>
+	</div>
+
+	<ul class="outbox__list">
+		<li ng-show="!outbox.messages.length" class="outbox__message">No messages!</li>
+		<li ng-repeat="message in outbox.messages | filter: { from: outbox.search }"
+				ng-class="{'outbox__message--read': message.read}"
+				class="outbox__message outbox__message--not-read">
+			
+			<ul class="outbox__info">
+				<li class="outbox__elem"><input ng-model="message.read" type="checkbox" class="outbox__check"></li>
+				<li class="outbox__elem"><b>whom:</b> {{message.whom}}</li>
+				<li class="outbox__elem outbox__elem--subj">{{message.subject}}</li>
+				<li class="outbox__elem">{{message.date | date: 'dd/MM/yyyy'}}</li>
+			</ul>
+			<div class="outbox__actions">
+			<!-- 	<a ui-sref="email({id:message.id})" class="btn">Read</a> -->
+				<a ng-click="outbox.deleteMessage($index)" class="btn">Delete</a>
+			</div>
+		</li>
+	</ul>
+</div>

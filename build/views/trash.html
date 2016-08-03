@@ -1,0 +1,29 @@
+<div class="trash">
+	<h2 class="trash__title">Trash</h2>
+	<div class="trash__count">
+		<p class="trash__text">You have {{ trash.messages.length }} messages.</p>
+
+		<div ng-hide="!trash.messages.length" class="trash__search">
+			<input ng-model="trash.search" type="text" class="trash__search-field" placeholder="Search by 'from'">
+		</div>
+	</div>
+
+	<ul class="trash__list">
+		<li ng-show="!trash.messages.length" class="trash__message">No messages!</li>
+		<li ng-repeat="message in trash.messages | filter: { from: trash.search }"
+				ng-class="{'trash__message--read': message.read}"
+				class="trash__message trash__message--not-read">
+			
+			<ul class="trash__info">
+				<li class="trash__elem"><input ng-model="message.read" type="checkbox" class="trash__check"></li>
+				<li class="trash__elem"><b>from:</b> {{message.from}}</li>
+				<li class="trash__elem trash__elem--subj">{{message.subject}}</li>
+				<li class="trash__elem">{{message.date | date: 'dd/MM/yyyy'}}</li>
+			</ul>
+			<div class="trash__actions">
+			<!-- 	<a ui-sref="email({id:message.id})" class="btn">Read</a> -->
+				<a ng-click="trash.deleteMessage($index)" class="btn">Delete</a>
+			</div>
+		</li>
+	</ul>
+</div>

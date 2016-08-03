@@ -3,9 +3,9 @@ function writeCtrl(inboxService) {
 	vm.message = {};
 
 
-	vm.sendMessage = function(message) {
-		inboxService.sendMessage(message);
-		vm.message.post = '';
+	vm.sendMessage = function() {
+		inboxService.sendMessage(vm.message);
+		vm.message.content = '';
 	};
 
 };

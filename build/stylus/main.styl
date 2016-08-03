@@ -21,13 +21,24 @@
 		color #33B0D9
 		text-shadow .05em .05em .1em darken(#F9F6F6,40%)
 .logo
-	width 10em
-	height 4em
+	width 11em
+	height 3em
 	&__img
 		display inline-block
 		margin-right 1em
 		width 3em
 		height auto
+		
+.main-nav
+	margin 0
+	&__action-bar
+		display flex
+		justify-content center
+		align-items center
+		padding 0
+		margin 0
+		list-style none
+		
 
 .main
 	display flex
@@ -110,20 +121,9 @@
 			flex 6
 		&:last-child
 			flex 1
-			
-	&__action-bar
-		position absolute
-		display flex
-		justify-content flex-end
-		align-items center
-		right 0
-		top 6.2em
-		padding 0 1.5em
-		margin 0
-		list-style none
-
 	&__actions
 		margin-left 1em
+			
 		
 	&__message--not-read
 		.inbox__elem--subj
@@ -169,6 +169,137 @@
 		padding .3em
 		margin-bottom 1em
 		font 1rem 'Helvetica Neue', Arial, sans-serif
+		
+
+/***************************************/	
+/* block outbox
+/***************************************/	
+.outbox
+	width 100%
+	min-height 30em
+	position relative
+	&__title
+		margin 0
+		padding 1em 0 0 1em
+		color #fff
+		background-color #938E8E
+	&__count
+		padding 1em
+		color #fff
+		background-color #938E8E
+	&__search
+		color #000
+	&__search-field
+		display block
+		width 20em
+		height 2em
+		padding-left .5em
+		border none
+		border-radius .2em
+	&__list
+		margin 0
+		padding 0
+		list-style none
+	&__message
+		display flex
+		justify-content center
+		align-items center
+		padding 1.5em 1em 1.5em 0
+		border-bottom 0.1em solid #8E8888
+		transition all 0.2s ease-in 0.1s
+		&:last-child
+			border-bottom none
+		&:nth-child(odd)
+			background-color #EEECEC
+		&:nth-child(even)
+			background-color lighten(#EEECEC, 25%)
+		&:hover
+			background-color darken(#EEECEC, 10%)
+	&__info
+		display flex
+		justify-content flex-start
+		align-items center
+		margin 0
+		padding 0
+		width 85%
+		list-style none
+	&__elem
+		margin-right 1em
+		flex 2
+		&:nth-child(1)
+			flex 1
+			margin 0
+		&:nth-child(3)
+			flex 6
+		&:last-child
+			flex 1
+	&__actions
+		margin-left 1em
+
+/***************************************/	
+/* block trash
+/***************************************/	
+.trash
+	width 100%
+	min-height 30em
+	position relative
+	&__title
+		margin 0
+		padding 1em 0 0 1em
+		color #fff
+		background-color #938E8E
+	&__count
+		padding 1em
+		color #fff
+		background-color #938E8E
+	&__search
+		color #000
+	&__search-field
+		display block
+		width 20em
+		height 2em
+		padding-left .5em
+		border none
+		border-radius .2em
+	&__list
+		margin 0
+		padding 0
+		list-style none
+	&__message
+		display flex
+		justify-content center
+		align-items center
+		padding 1.5em 1em 1.5em 0
+		border-bottom 0.1em solid #8E8888
+		transition all 0.2s ease-in 0.1s
+		&:last-child
+			border-bottom none
+		&:nth-child(odd)
+			background-color #EEECEC
+		&:nth-child(even)
+			background-color lighten(#EEECEC, 25%)
+		&:hover
+			background-color darken(#EEECEC, 10%)
+	&__info
+		display flex
+		justify-content flex-start
+		align-items center
+		margin 0
+		padding 0
+		width 85%
+		list-style none
+	&__elem
+		margin-right 1em
+		flex 2
+		&:nth-child(1)
+			flex 1
+			margin 0
+		&:nth-child(3)
+			flex 6
+		&:last-child
+			flex 1
+	&__actions
+		margin-left 1em
 		
 /***************************************/	
 /* block write

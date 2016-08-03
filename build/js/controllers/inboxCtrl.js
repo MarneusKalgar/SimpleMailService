@@ -3,14 +3,7 @@ function inboxCtrl(inboxService) {
 	vm.messages = [];
 
 	vm.getMessages = function() {
-		inboxService.getMessages()
-			.success(function(messages) {
-				vm.messages = messages;
-				console.log('messages returned to the controller', vm.messages);
-			})
-			.error(function() {
-				console.log('messages returned failed');
-			});
+		vm.messages = inboxService.messages;
 	};
 	vm.getMessages();
 

@@ -30,7 +30,7 @@ gulp.task('bower', function () {
 });
 
 
-//SERVER
+//run server
 gulp.task('server', function() {
   gulp.src(buildDir)
     .pipe(server({
@@ -40,7 +40,7 @@ gulp.task('server', function() {
     }));
 });
 
-//STYLES
+//build css
 gulp.task('style', function () {
   gulp.src(buildDir + '/stylus/**/*.styl')
     .pipe(stylus())
@@ -51,6 +51,7 @@ gulp.task('style', function () {
     .pipe(gulp.dest(buildDir + '/css'));
 });
 
+//watch
 gulp.task('watch', function () {
   gulp.watch(buildDir + '/stylus/**/*.styl', ['style']);
   gulp.watch('bower.json', ['bower']);
