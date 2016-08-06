@@ -1,9 +1,0 @@
-[
-  {
-    "from": "JavaScript Weekly <jsw@peterc.org>",
-    "date": 1469817961100,
-    "subject": "JavaScript Weekly: Issue 294 — July 28, 2016",
-    "content": "Aurelia 1.0 Released. Aurelia is a next-gen JavaScript client framework that Rob Eisenberg, formerly an Angular 2 core team member, first shared 18 months ago. Perhaps you're hearing about Aurelia for the first time today and you're wondering 'What is it exactly?' Well, in short, Aurelia is a platform for building apps, based on top of open web technologies. You can build browser apps, you can build mobile apps and you can build desktop apps. Aurelia stays very close to web standards by embracing ES 2015+, Web Components and the modern DOM. It's also uniquely unobtrusive, allowing it to stay out of your JavaScript code while you focus on your app.",
-    "id": 2
-  }
-]

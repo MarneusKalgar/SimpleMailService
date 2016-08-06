@@ -1,9 +1,0 @@
-[
-  {
-    "from": "FrontEnd Focus <frontend@cooperpress.com>",
-    "date": 1469817961100,
-    "subject": "Must-know Techniques for Building HTML5 Apps for Any Screen Size",
-    "content": "Responsive web design is the best and fastest way to serve desktop and mobile web users in a tailored and cost-effective manner. If you're an HTML5/JavaScript developer, maybe you have already jumped in on a responsive project and would like to learn more. If not, responsive web design will probably be a requirement in the near future. This whitepaper will walk you through the must-know responsive web practices to help you succeed in building HTML5 apps for any screen size. You’ll learn how to: Leverage the basic building blocks of responsive web design - grid systems, media queries and flexible content - to create responsive layouts. Choose a responsive web design framework (Bootstrap, Zurb Foundation, Telerik Page Layout) Use advanced Bootstrap features, such as fluid containers, offsets, push/pull and more, to achieve even the most complex responsive web scenarios",
-    "id": 6
-  }
-]
