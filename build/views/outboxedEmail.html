@@ -1,0 +1,9 @@
+<div class="email">
+	<ul class="email__info">
+		<li class="email__elem"><h3>{{outboxedEmail.currentMessage.subject}}</h3></li>
+		<li class="email__elem"><b>whom:</b> {{outboxedEmail.currentMessage.whom}}</li>
+		<li class="email__elem">{{outboxedEmail.currentMessage.date | date: 'dd/MM/yyyy'}}</li>
+		<li class="email__elem"><a ui-sref="outbox" class="btn">Back</a></li>
+		<li class="email__elem">{{outboxedEmail.currentMessage.content}}</li>
+	</ul>
+</div>

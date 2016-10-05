@@ -1,4 +1,4 @@
-function emailCtrl(inboxService, $stateParams) {
+function inboxedEmailCtrl(inboxService, $stateParams) {
 	var vm = this;
 	vm.currentMessage = {};
 
@@ -12,10 +12,7 @@ function emailCtrl(inboxService, $stateParams) {
 		inboxService.sendMessage(response);
 		vm.currentMessage.response = '';
 	};
-
 }
 
-
-
 angular.module('mailApp')
-	.controller('emailCtrl', ['inboxService', '$stateParams', emailCtrl]);
+	.controller('inboxedEmailCtrl', ['inboxService', '$stateParams', inboxedEmailCtrl]);
